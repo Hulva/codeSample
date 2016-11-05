@@ -18,3 +18,11 @@ Any IDE can be used to work with the projects, but if you're using Eclipse, cons
 # [C](./practice-c)
 
 forked from [jwasham/practice-c](https://github.com/jwasham/practice-c)
+
+# [C++](./practice-cpp)
+
+forked from [jwasham/practice-cpp](https://github.com/jwasham/practice-cpp)
+
+# [Python](./practice-python)
+
+forked from [jwasham/practice-python](https://github.com/jwasham/practice-python)
