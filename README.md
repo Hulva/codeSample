@@ -26,3 +26,7 @@ forked from [jwasham/practice-cpp](https://github.com/jwasham/practice-cpp)
 # [Python](./practice-python)
 
 forked from [jwasham/practice-python](https://github.com/jwasham/practice-python)
+
+# [Zookeeper example](./zookeeper)
+
+forked from [Apache ZooKeeper - O'Reilly Book Example](https://github.com/fpj/zookeeper-book-example)
