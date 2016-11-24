@@ -1,13 +1,12 @@
 package main.java.com.baeldung.selenium;
 
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class SeleniumExample {
 
@@ -15,6 +14,7 @@ public class SeleniumExample {
     private String url = "http://www.baeldung.com/";
 
     public SeleniumExample() {
+        System.setProperty("webdriver.firefox.marionette", "C:\\selenium\\geckodriver.exe");
         webDriver = new FirefoxDriver();
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -29,16 +29,20 @@ public class SeleniumExample {
         return webDriver.getTitle();
     }
 
-    public void getAboutBaeldungPage() throws Exception {
+    public void getAboutBaeldungPage() {
         closeOverlay();
         clickAboutLink();
         clickAboutUsLink();
     }
 
-    private void closeOverlay() throws Exception {
+    private void closeOverlay() {
         List<WebElement> webElementList = webDriver.findElements(By.tagName("a"));
-        if (webElementList != null && !webElementList.isEmpty() && webElementList.stream().filter(webElement -> "Close".equalsIgnoreCase(webElement.getAttribute("title"))).findAny().isPresent()) {
-            webElementList.stream().filter(webElement -> "Close".equalsIgnoreCase(webElement.getAttribute("title"))).findAny().orElseThrow(NoSuchElementException::new).click();
+        if (webElementList != null) {
+            webElementList.stream()
+              .filter(webElement -> "Close".equalsIgnoreCase(webElement.getAttribute("title")))
+              .filter(WebElement::isDisplayed)
+              .findAny()
+              .ifPresent(WebElement::click);
         }
     }
 
@@ -51,6 +55,6 @@ public class SeleniumExample {
     }
 
     public boolean isAuthorInformationAvailable() {
-        return webDriver.findElement(By.xpath("//*[contains(text(), 'Eugen – an engineer')]")).isDisplayed();
+        return webDriver.findElement(By.xpath("//*[contains(text(), 'an engineer with a passion for teaching and building stuff on the web')]")).isDisplayed();
     }
 }
