@@ -21,8 +21,8 @@ import org.slf4j.LoggerFactory;
 public class ElasticSearchUtil {
 
     private static final Logger logger = LoggerFactory.getLogger(ElasticSearchUtil.class);
-    private static final String CLUSTER_NAME = "sampledata-elasticsearch";
-    private static final String ELASTIC_SERVER_HOST = "localhost";
+    private static final String CLUSTER_NAME = "test-es";
+    private static final String ELASTIC_SERVER_HOST = "10.16.238.82";
     private static final int ELASTIC_SERVER_PORT = 9200;
     private static final int ELASTIC_INDEX_PORT = 9300;
 
