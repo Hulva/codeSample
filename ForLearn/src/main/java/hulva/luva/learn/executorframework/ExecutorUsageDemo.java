@@ -17,8 +17,8 @@ import java.util.concurrent.Future;
 public class ExecutorUsageDemo {
 
 	private static ExecutorService executor = null;
-	private static volatile Future taskOneResults = null;
-	private static volatile Future taskTwoResults = null;
+	private static volatile Future<?> taskOneResults = null;
+	private static volatile Future<?> taskTwoResults = null;
 
 	public static void main(String[] args) {
 		executor = Executors.newFixedThreadPool(2);

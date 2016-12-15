@@ -45,9 +45,10 @@ public class MyImmutableList {
 	public void givenUsingGuavaBuilder_whenUnmodifiableListIsCreated_thenNoLongerModifiable() {
 		List<String> list = new ArrayList<String>(Arrays.asList("one", "two",
 				"three"));
+		@SuppressWarnings("unused")
 		ImmutableList<Object> unmodifiableList = ImmutableList.builder()
 				.addAll(list).build();
-		unmodifiableList.add("four");
+//		unmodifiableList.add("four"); Unsupported operation
 	}
 
 	// ListUtils.unmodifiableList(list);
