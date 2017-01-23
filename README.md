@@ -32,3 +32,7 @@ forked from [jwasham/practice-python](https://github.com/jwasham/practice-python
 forked from [Apache ZooKeeper - O'Reilly Book Example](https://github.com/fpj/zookeeper-book-example)
 
 # [Facebook Samples](https://github.com/fbsamples)
+
+# [Kafka example](./kafka)
+
+forked from [Confluentinc Example](https://github.com/confluentinc/examples)
