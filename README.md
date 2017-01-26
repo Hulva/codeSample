@@ -33,6 +33,11 @@ forked from [Apache ZooKeeper - O'Reilly Book Example](https://github.com/fpj/zo
 
 # [Facebook Samples](https://github.com/fbsamples)
 
+
 # [Kafka example](./kafka)
 
 forked from [Confluentinc Example](https://github.com/confluentinc/examples)
+
+# [Confluent](https://github.com/confluentinc)
+
+Real time streams powered by Apache Kafka (TM)
