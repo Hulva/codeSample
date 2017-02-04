@@ -42,6 +42,6 @@ forked from [Confluentinc Example](https://github.com/confluentinc/examples)
 
 Real time streams powered by Apache Kafka (TM)
 
-# [Learning Hadoop 2 - code](./Learning-Hadoop-2_code)
+# [Learning Hadoop 2 - code](./learning-hadoop2_code)
 
 forked from [learninghadoop2/book-examples](https://github.com/learninghadoop2/book-examples)
