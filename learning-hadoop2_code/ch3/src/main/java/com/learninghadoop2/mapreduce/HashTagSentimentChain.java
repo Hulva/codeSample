@@ -40,9 +40,8 @@ public class HashTagSentimentChain extends Configured implements Tool
         Configuration hashTatSentimentConf = new Configuration(false);
         ChainMapper.addMapper(job,
                 HashTagSentiment.HashTagSentimentMapper.class,
-                IntWritable.class,
+                IntWritable.class, Text.class, 
                 Text.class, Text.class,
-                Text.class,
                 hashTatSentimentConf);
 
 
