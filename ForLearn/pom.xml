@@ -150,6 +150,7 @@
 	</dependencies>
 	<modules>
 		<module>restExpressDemo</module>
+		<module>bigdata</module>
 	</modules>
 	<build>
 		<plugins>
