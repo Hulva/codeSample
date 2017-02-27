@@ -11,6 +11,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <gib.referenceBranch>refs/heads/master</gib.referenceBranch>
+        <gib.enabled>false</gib.enabled>
     </properties>
 
     <modules>
@@ -20,11 +22,13 @@
         <module>apache-cxf</module>
         <module>apache-fop</module>
         <module>apache-poi</module>
+        <module>apache-thrift</module>
         <module>aspectj</module>
         <module>assertj</module>
         <module>autovalue</module>
 
         <module>cdi</module>
+        <module>cglib</module>
         <!-- <module>core-java-9</module> -->
         <module>core-java</module>
         <module>couchbase-sdk</module>
@@ -62,6 +66,7 @@
         <module>jaxb</module>
         <module>jee7</module>
         <module>jjwt</module>
+        <module>jooq</module>
         <module>jpa-storedprocedure</module>
         <module>jsf</module>
         <module>json-path</module>
@@ -78,6 +83,7 @@
 
         <module>mapstruct</module>
         <module>metrics</module>
+        <module>mesos-marathon</module>
         <module>mockito</module>
         <module>mocks</module>
 
@@ -93,8 +99,10 @@
         <module>rest-assured</module>
         <module>rest-testing</module>
         <module>resteasy</module>
+        <module>rxjava</module>
 
         <module>selenium-junit-testng</module>
+        <module>solr-fulltext-search</module>
         <module>spark-java</module>
         <module>spring-akka</module>
         <module>spring-amqp</module>
@@ -103,6 +111,7 @@
         <module>spring-autowire</module>
         <module>spring-batch</module>
         <module>spring-boot</module>
+        <module>spring-boot-servlet</module>
         <module>spring-cloud-data-flow</module>
         <module>spring-cloud</module>
         <module>spring-core</module>
@@ -137,13 +146,14 @@
         <module>spring-mvc-web-vs-initializer</module>
         <module>spring-mvc-xml</module>
         <module>spring-mvc-simple</module>
-        <module>spring-openid</module>
+        <module>spring-security-openid</module>
         <module>spring-protobuf</module>
         <module>spring-quartz</module>
         <module>spring-rest-angular</module>
         <module>spring-rest-docs</module>
         <module>spring-rest</module>
         <module>spring-security-basic-auth</module>
+        <module>spring-security-cache-control</module>
         <module>spring-security-client/spring-security-jsp-authentication</module>
         <module>spring-security-client/spring-security-jsp-authorize</module>
         <module>spring-security-client/spring-security-jsp-config</module>
@@ -152,7 +162,7 @@
         <module>spring-security-client/spring-security-thymeleaf-authorize</module>
         <module>spring-security-client/spring-security-thymeleaf-config</module>
         <module>spring-security-core</module>
-        <module>spring-security-custom-permission</module>
+        <module>spring-security-mvc-boot</module>
         <module>spring-security-mvc-custom</module>
         <module>spring-security-mvc-digest-auth</module>
         <module>spring-security-mvc-ldap</module>
@@ -175,6 +185,7 @@
         <module>spring-reactor</module>
 
         <module>testing</module>
+        <module>testng</module>
 
         <module>video-tutorials</module>
 
@@ -185,7 +196,18 @@
         <module>xstream</module>
 
         <module>struts2</module>
+        <module>apache-velocity</module>
+        <module>apache-solrj</module>
 
-  </modules>
+    </modules>
 
+    <build>
+        <extensions>
+            <extension>
+                <groupId>com.vackosar.gitflowincrementalbuilder</groupId>
+                <artifactId>gitflow-incremental-builder</artifactId>
+                <version>3.1</version>
+            </extension>
+        </extensions>
+    </build>
 </project>
