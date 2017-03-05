@@ -27,7 +27,6 @@ public class CreateHbaseTable {
 
 	public static void createOrOverwrite(Admin admin, HTableDescriptor table) throws IOException {
 		if (admin.tableExists(table.getTableName())) {
-			admin.disableTable(table.getTableName());
 			admin.deleteTable(table.getTableName());
 		}
 		admin.createTable(table);

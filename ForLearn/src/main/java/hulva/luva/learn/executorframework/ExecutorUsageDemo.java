@@ -6,6 +6,10 @@ package hulva.luva.learn.executorframework;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.RejectedExecutionHandler;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @ClassName
@@ -21,6 +25,36 @@ public class ExecutorUsageDemo {
 	private static volatile Future<?> taskTwoResults = null;
 
 	public static void main(String[] args) {
+		executor = new ThreadPoolExecutor(2, 4,
+                10L, TimeUnit.MILLISECONDS,
+                new LinkedBlockingQueue<Runnable>(),new RejectedExecutionHandler() {
+                    public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
+                    	// TODO Maybe i could send it to another server
+                        System.out.println(String.format("Task %d rejected.", r.hashCode()));
+                    }
+                }){
+
+					@Override
+					protected void beforeExecute(Thread t, Runnable r) {
+						// TODO Auto-generated method stub
+						super.beforeExecute(t, r);
+					}
+
+					@Override
+					protected void afterExecute(Runnable r, Throwable t) {
+						// TODO Auto-generated method stub
+						super.afterExecute(r, t);
+					}
+
+					@Override
+					public void setRejectedExecutionHandler(RejectedExecutionHandler handler) {
+						// TODO Auto-generated method stub
+						super.setRejectedExecutionHandler(handler);
+					}
+					
+			
+		};
+
 		executor = Executors.newFixedThreadPool(2);
 		try {
 			while (true) {
@@ -54,6 +88,8 @@ public class ExecutorUsageDemo {
 	 *
 	 */
 	class RunnableOne implements Runnable {
+		
+		
 
 		@Override
 		public void run() {
