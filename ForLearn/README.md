@@ -4,3 +4,7 @@
 2. Random Long, Float, Integer and Double
 3. Timer
 	> `Timer`和 `TimerTask`是用来在后台调度任务的java工具类
+	
+	
+# Memo
+> https://coderanch.com/t/615199/java/unloading-jar-dynamically-invoked
