@@ -20,7 +20,11 @@
 	  class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
 	<bean id="viewResolver"
 	  class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+<<<<<<< HEAD
 	  <property name="prefix" value="/WEB-INF/" />
+=======
+	  <property name="prefix" value="/WEB-INF/views/" />
+>>>>>>> 22dda8c2be6861c56a47861137fbbbb067a72b0e
 	  <property name="suffix" value=".jsp" />
 	</bean>
 </beans>  

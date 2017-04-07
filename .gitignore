@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 target
 .settings
 .classpath
 .project
+=======
+*/bin/*
+
+>>>>>>> 22dda8c2be6861c56a47861137fbbbb067a72b0e
 *.class
 
 # Package Files #
