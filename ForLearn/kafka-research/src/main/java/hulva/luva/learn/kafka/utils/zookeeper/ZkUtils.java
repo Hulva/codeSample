@@ -1,4 +1,4 @@
-package hulva.luva.learn.kafka.utils;
+package hulva.luva.learn.kafka.utils.zookeeper;
 
 import java.util.ArrayList;
 import java.util.List;
