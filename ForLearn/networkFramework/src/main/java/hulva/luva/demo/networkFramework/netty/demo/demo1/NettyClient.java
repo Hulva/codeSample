@@ -1,9 +1,9 @@
 /**
  * 
  */
-package hulva.luva.demo.networkFramework.netty;
+package hulva.luva.demo.networkFramework.netty.demo.demo1;
 
-import hulva.luva.demo.networkFramework.netty.handler.AsAClientHandler;
+import hulva.luva.demo.networkFramework.netty.demo.demo1.handler.AsAClientHandler;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;

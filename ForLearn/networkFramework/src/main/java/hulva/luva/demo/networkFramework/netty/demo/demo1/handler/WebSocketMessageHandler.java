@@ -1,4 +1,4 @@
-package hulva.luva.demo.networkFramework.netty.handler;
+package hulva.luva.demo.networkFramework.netty.demo.demo1.handler;
 
 import io.netty.channel.ChannelHandlerContext;
 

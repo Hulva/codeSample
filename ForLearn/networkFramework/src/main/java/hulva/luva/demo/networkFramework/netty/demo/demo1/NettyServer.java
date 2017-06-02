@@ -1,12 +1,12 @@
 /**
  * 
  */
-package hulva.luva.demo.networkFramework.netty;
+package hulva.luva.demo.networkFramework.netty.demo.demo1;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import hulva.luva.demo.networkFramework.netty.handler.DemoHandler;
+import hulva.luva.demo.networkFramework.netty.demo.demo1.handler.DemoHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
