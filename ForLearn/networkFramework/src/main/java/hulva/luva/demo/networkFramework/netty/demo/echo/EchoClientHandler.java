@@ -23,7 +23,10 @@ public class EchoClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        ctx.writeAndFlush(Unpooled.copiedBuffer("Netty rocks!", CharsetUtil.UTF_8));
+        // ByteBuf buf = ctx.alloc().directBuffer();
+        // buf.setBytes(0, "Netty rocks!".getBytes());
+        // ctx.writeAndFlush(buf.getCharSequence(0, 6, CharsetUtil.UTF_8));
+         ctx.writeAndFlush(Unpooled.copiedBuffer("Netty rocks!", CharsetUtil.UTF_8));
     }
 
     @Override
