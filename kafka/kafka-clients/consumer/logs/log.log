@@ -1,0 +1,7 @@
+2017-06-18 16:48:07 ERROR ConsumerFetcherThread:99 - [ConsumerFetcherThread-test_Luvia-1497775648672-a893edcb-0-1002], Current offset 2259 for partition [page_visits,0] out of range; reset offset to 0
+2017-06-18 18:01:37 ERROR ConsumerFetcherThread:99 - [ConsumerFetcherThread-test_Luvia-1497780096720-bb1db24b-0-1003], Current offset 2396 for partition [page_visits,1] out of range; reset offset to 0
+2017-06-18 18:01:37 ERROR ConsumerFetcherThread:99 - [ConsumerFetcherThread-test_Luvia-1497780096720-bb1db24b-0-1001], Current offset 2345 for partition [page_visits,2] out of range; reset offset to 0
+2017-06-18 18:01:37 ERROR ConsumerFetcherThread:99 - [ConsumerFetcherThread-test_Luvia-1497780096720-bb1db24b-0-1002], Current offset 13893 for partition [page_visits,0] out of range; reset offset to 0
+2017-06-18 18:02:06 ERROR ConsumerFetcherThread:99 - [ConsumerFetcherThread-test_Luvia-1497780125684-b12c53d6-0-1002], Current offset 4303 for partition [test,2] out of range; reset offset to 0
+2017-06-18 18:02:06 ERROR ConsumerFetcherThread:99 - [ConsumerFetcherThread-test_Luvia-1497780125684-b12c53d6-0-1003], Current offset 4328 for partition [test,0] out of range; reset offset to 0
+2017-06-18 18:02:06 ERROR ConsumerFetcherThread:99 - [ConsumerFetcherThread-test_Luvia-1497780125684-b12c53d6-0-1001], Current offset 4173 for partition [test,1] out of range; reset offset to 0

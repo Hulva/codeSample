@@ -15,62 +15,55 @@
  */
 package io.confluent.examples.producer;
 
-import org.apache.avro.Schema;
-import org.apache.avro.generic.GenericData;
-import org.apache.avro.generic.GenericRecord;
-import org.apache.kafka.clients.producer.KafkaProducer;
-import org.apache.kafka.clients.producer.Producer;
-import org.apache.kafka.clients.producer.ProducerRecord;
-
 import java.util.Date;
 import java.util.Properties;
 import java.util.Random;
 
+import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.Producer;
+import org.apache.kafka.clients.producer.ProducerRecord;
+import org.json.JSONObject;
+
 public class ProducerExample {
-  public static void main(String[] args){
-    if (args.length != 2) {
-      System.out.println("Please provide command line arguments: numEvents schemaRegistryUrl");
-      System.exit(-1);
-    }
-    long events = Long.parseLong(args[0]);
-    String url = args[1];
+	public static void main(String[] args) {
+		if (args.length ==0) {
+			System.out.println("Please provide command line arguments: numEvents schemaRegistryUrl");
+			System.exit(-1);
+		}
+		long events = Long.parseLong(args[0]);
 
-    Properties props = new Properties();
-    props.put("bootstrap.servers", "localhost:9092");
-    props.put("acks", "all");
-    props.put("retries", 0);
-    props.put("key.serializer", "io.confluent.kafka.serializers.KafkaAvroSerializer");
-    props.put("value.serializer", "io.confluent.kafka.serializers.KafkaAvroSerializer");
-    props.put("schema.registry.url", url);
+		Properties props = new Properties();
+		props.put("bootstrap.servers", "lc7003.luva.h:6667,c7001.luva.h:6667,c7002.luva.h:6667");
+		props.put("acks", "all");
+		props.put("retries", 0);
+		props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+		props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+//		props.put("schema.registry.url", url);
 
-    String schemaString = "{\"namespace\": \"example.avro\", \"type\": \"record\", " +
-                           "\"name\": \"page_visit\"," +
-                           "\"fields\": [" +
-                            "{\"name\": \"time\", \"type\": \"long\"}," +
-                            "{\"name\": \"site\", \"type\": \"string\"}," +
-                            "{\"name\": \"ip\", \"type\": \"string\"}" +
-                           "]}";
-    Producer<String, GenericRecord> producer = new KafkaProducer<String, GenericRecord>(props);
+		Producer<String, String> producer = new KafkaProducer<String, String>(props);
 
-    Schema.Parser parser = new Schema.Parser();
-    Schema schema = parser.parse(schemaString);
+		Random rnd = new Random();
+		while(true){
+//		for (long nEvents = 0; nEvents < events; nEvents++) {
+			long runtime = new Date().getTime();
+			String site = "www.example.com";
+			String ip = "192.168.2." + rnd.nextInt(255);
+			JSONObject page_visit = new JSONObject();
+			page_visit.put("time", runtime);
+			page_visit.put("site", site);
+			page_visit.put("ip", ip);
 
-    Random rnd = new Random();
-    for (long nEvents = 0; nEvents < events; nEvents++) {
-      long runtime = new Date().getTime();
-      String site = "www.example.com";
-      String ip = "192.168.2." + rnd.nextInt(255);
+			ProducerRecord<String, String> data = new ProducerRecord<String, String>("kafkazkoffset", ip,
+					page_visit.toString());
+			producer.send(data);
+			try {
+			    Thread.sleep(100);
+			} catch (InterruptedException e) {
+			    // TODO Auto-generated catch block
+			    e.printStackTrace();
+			}
+		}
 
-      GenericRecord page_visit = new GenericData.Record(schema);
-      page_visit.put("time", runtime);
-      page_visit.put("site", site);
-      page_visit.put("ip", ip);
-
-      ProducerRecord<String, GenericRecord> data = new ProducerRecord<String, GenericRecord>(
-          "page_visits", ip, page_visit);
-      producer.send(data);
-    }
-
-    producer.close();
-  }
+//		producer.close();
+	}
 }
