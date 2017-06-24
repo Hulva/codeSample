@@ -50,7 +50,7 @@ public class ConsumerGroupExample {
 		props.put("group.id", groupId);
 		props.put("auto.commit.enable", "true");
 		props.put("auto.offset.reset", "smallest");
-		props.put("offsets.storage", "kafka");
+		props.put("offsets.storage", "zookeeper");
 		// props.put("schema.registry.url", url);
 
 		return props;
@@ -95,9 +95,10 @@ public class ConsumerGroupExample {
 			System.exit(-1);
 		}*/
 
-		String zooKeeper = "c7003.luva.h:2181,c7001.luva.h:2181,c7002.luva.h:2181";
-		String groupId = "test";
-		String topic = "kafkazkoffset";
+//		String zooKeeper = "c7003.luva.h:2181,c7001.luva.h:2181,c7002.luva.h:2181";
+		String zooKeeper = "10.16.238.94:8181,10.16.238.95:8181,10.16.238.96:8181";
+		String groupId = args[0];
+		String topic = args[1];
 		int threads = 1;
 		String url = "";
 
