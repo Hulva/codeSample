@@ -1,9 +1,0 @@
-2017-06-21 15:36:45 ERROR Sender:137 - Uncaught error in kafka producer I/O thread: 
-org.apache.kafka.common.protocol.types.SchemaException: Error reading field 'brokers': Error reading field 'host': Error reading string of length 12592, only 159 bytes available
-	at org.apache.kafka.common.protocol.types.Schema.read(Schema.java:73)
-	at org.apache.kafka.clients.NetworkClient.parseResponse(NetworkClient.java:380)
-	at org.apache.kafka.clients.NetworkClient.handleCompletedReceives(NetworkClient.java:449)
-	at org.apache.kafka.clients.NetworkClient.poll(NetworkClient.java:269)
-	at org.apache.kafka.clients.producer.internals.Sender.run(Sender.java:236)
-	at org.apache.kafka.clients.producer.internals.Sender.run(Sender.java:135)
-	at java.lang.Thread.run(Thread.java:745)
