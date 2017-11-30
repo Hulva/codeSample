@@ -95,8 +95,7 @@ public class ConsumerGroupExample {
 			System.exit(-1);
 		}*/
 
-//		String zooKeeper = "c7003.luva.h:2181,c7001.luva.h:2181,c7002.luva.h:2181";
-		String zooKeeper = "10.16.238.94:8181,10.16.238.95:8181,10.16.238.96:8181";
+		String zooKeeper = "c7003.luva.h:2181,c7001.luva.h:2181,c7002.luva.h:2181";
 		String groupId = args[0];
 		String topic = args[1];
 		int threads = 1;
