@@ -32,7 +32,6 @@ public class ProducerExample {
 
         Properties props = new Properties();
         // props.put("bootstrap.servers", "lc7003.luva.h:6667,c7001.luva.h:6667,c7002.luva.h:6667");
-        props.put("bootstrap.servers", "10.16.238.94:8092,10.16.238.95:8092,10.16.238.96:8092");
         props.put("acks", "all");
         props.put("retries", 0);
         props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
