@@ -1,2 +1,0 @@
-# Callable
-This interface has the `call()` method. In this method, you have to implement the logic of a task. The `Callable` interface is a parameterized interface, meaning you have to indicate the type of data the `call()` method will return.

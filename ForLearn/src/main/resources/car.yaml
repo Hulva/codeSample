@@ -1,8 +1,0 @@
-!!hulva.luva.learn.yaml.model.Car
-brand: Benz
-date: 2017-01-26 09:21:58
-wheel: !!hulva.luva.learn.yaml.model.Wheel {
-    brand: Luva,
-    level: FIVE,
-    price: 25.5
-  }
