@@ -1,0 +1,56 @@
+# Single mode ###################################################################
+#Eureka默认会将自己作为客户端尝试注册
+#server:
+#  port: 8761  # 指定该Eureka实例的端口
+#  
+#eureka:
+#  instance:
+#    hostname: localhost # discovery
+#  client:
+#    register-with-eureka: false
+#    fetch-registry: false
+#    service-url:
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+####################################################################################
+# start with: --spring.profiles.active=peer1
+---
+spring:
+  profiles: peer1                                 # 指定profile=peer1
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: luva.peer1                               # 指定当profile=peer1时，主机名
+#    nonSecurePortEnabled: false
+#    securePortEnabled: true
+    statusPageUrl: http://${eureka.hostName}:${server.port}/info
+    healthCheckUrl: http://${eureka.hostName}:${server.port}/health
+    homePageUrl: http://${eureka.hostName}:${server.port}/
+#    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://luva.peer1:8761/eureka/,http://luva.peer2:8762/eureka/      # 将自己注册到peer2这个Eureka上面去
+    healthcheck:
+      enabled: true
+#      如果需要对健康检查做更多控制，可以考虑实现自己的com.netflix.appinfo.HealthCheckHandler
+
+---
+spring:
+  profiles: peer2
+server:
+  port: 8762
+eureka:
+  instance:
+    hostname: luva.peer2
+#    nonSecurePortEnabled: false
+#    securePortEnabled: true
+    statusPageUrl: http://${eureka.hostName}:${server.port}/info
+    healthCheckUrl: http://${eureka.hostName}:${server.port}/health
+    homePageUrl: http://${eureka.hostName}:${server.port}/
+#    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://luva.peer1:8761/eureka/,http://luva.peer2:8762/eureka/
+    healthcheck:
+      enabled: true
